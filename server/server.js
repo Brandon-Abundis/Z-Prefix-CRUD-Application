@@ -4,10 +4,15 @@ const cors = require("cors");
 const app = express();
 const port = 8080;
 
+// all the router files needed
+const userRoutes = require("./routes/users");
+
 app.use(express.json());
 
 app.get("/", (req, res) => {
   return res.status(200).json({ message: "Welcom to the empty route for the CRUD app ♡(˶>⩊<˶)" })
 });
+
+app.use("/users", userRoutes);
 
 app.listen(port, () => console.log(`Express server listening on port ${port}`));
