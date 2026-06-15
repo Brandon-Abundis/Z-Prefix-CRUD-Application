@@ -31,13 +31,6 @@ exports.seed = async function(knex) {
       last_name: 'Doe',
       username: 'visitor123',
       password: await bcrypt.hash("password123", SALT_ROUNDS)
-    },
-    {
-      id: 4,
-      first_name: 'First',
-      last_name: 'Last',
-      username: 'Username',
-      password: await bcrypt.hash("", SALT_ROUNDS)
     }
 
   ]);

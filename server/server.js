@@ -6,6 +6,7 @@ const port = 8080;
 
 // all the router files needed
 const userRoutes = require("./routes/users");
+const itemRoutes = require("./routes/items");
 
 app.use(express.json());
 
@@ -14,5 +15,6 @@ app.get("/", (req, res) => {
 });
 
 app.use("/users", userRoutes);
+app.use("/items", itemRoutes);
 
 app.listen(port, () => console.log(`Express server listening on port ${port}`));
