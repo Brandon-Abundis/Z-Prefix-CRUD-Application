@@ -5,7 +5,7 @@
 exports.seed = async function(knex) {
   await knex.raw("TRUNCATE TABLE items RESTART IDENTITY CASCADE");
   // Deletes ALL existing entries
-  await knex('items').del()
+  // await knex('items').del()
   await knex("items").insert([
     { user_id: 2, item_name: "Wireless Mouse", description: "Ergonomic 2.4GHz mouse", quantity: 5 },
     { user_id: 2, item_name: "Mechanical Keyboard", description: "RGB backlit mechanical keyboard", quantity: 2 },

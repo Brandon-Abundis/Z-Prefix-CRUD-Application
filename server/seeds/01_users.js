@@ -9,7 +9,7 @@ const SALT_ROUNDS = 10;
 exports.seed = async function(knex) {
   // Deletes ALL existing entries
   await knex.raw("TRUNCATE TABLE users RESTART IDENTITY CASCADE"); // need this for id's to relax
-  await knex('users').del()
+  // await knex('users').del()
   await knex('users').insert([
     {
       id: 1, inventory_manager: true,
