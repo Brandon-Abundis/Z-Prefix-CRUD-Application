@@ -11,7 +11,7 @@ services:
 
   api:
     build: ./server
-    # command: npm run docker:setup
+    command: npm run docker:setup
     ports:
     - 8080:8080
     volumes:
