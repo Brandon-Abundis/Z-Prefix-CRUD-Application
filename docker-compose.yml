@@ -5,6 +5,17 @@ services:
     environment:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=docker
-      - POSTGRES_DB=com_db
+      - POSTGRES_DB=crud_db
     ports:
       - 5432:5432
+
+  api:
+    build: ./server
+    command: npm run docker:setup
+    ports:
+    - 8080:8080
+    volumes:
+      - ./server:/app
+      - /app/node_modules
+    environment:
+      - DATABASE_URL=postgres://postgres:docker@db:5432/crud_db
