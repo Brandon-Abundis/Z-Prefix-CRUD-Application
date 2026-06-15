@@ -5,7 +5,6 @@
 exports.up = function(knex) {
   return knex.schema.createTable("users", (table) => {
     table.increments().primary();
-    table.boolean("inventory_manager").defaultTo(false);
     table.string("first_name");
     table.string("last_name");
     table.string("username");
