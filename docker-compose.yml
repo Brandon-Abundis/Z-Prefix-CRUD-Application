@@ -1,0 +1,10 @@
+services:
+  db:
+    image: postgres
+    container_name: pg-docker
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=docker
+      - POSTGRES_DB=com_db
+    ports:
+      - 5432:5432
