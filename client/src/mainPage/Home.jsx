@@ -1,4 +1,6 @@
 
+import Inventory from "./Inventory";
+
 export default function Home() {
 
   return (
@@ -14,6 +16,8 @@ export default function Home() {
             Edit <code>src/App.jsx</code> and save to test <code>HMR</code>
           </p>
         </div>
+
+        <Inventory/>
         {/* <button
           type="button"
           className="counter"
