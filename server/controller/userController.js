@@ -5,7 +5,7 @@ const SALT_ROUNDS = 10;
 
 const getAll = async (req, res) => {
   try {
-    const allUsers = await db("users").select("*");
+    const allUsers = await db("users").select("id", "first_name", "last_name", "username");
     res.status(200).send(allUsers);
 
   } catch(error) {

@@ -1,5 +1,5 @@
 
-import Inventory from "./Inventory";
+import InventoryDashboard from "./InventoryDashboard";
 
 export default function Home() {
 
@@ -17,7 +17,7 @@ export default function Home() {
           </p>
         </div>
 
-        <Inventory/>
+        <InventoryDashboard/>
         {/* <button
           type="button"
           className="counter"

@@ -9,14 +9,20 @@ import Home from './mainPage/Home';
 import { InventoryContext } from './contexts/InventoryContext';
 
 import useFetchAllUsers from './customHooks/useFetchAllUsers';
+import useFetchItemsByUsers from './customHooks/useFetchItemsByUsers';
 
 function App() {
-  const { users } = useFetchAllUsers();
+  // const [refreshCount, setRefreshCount] = useState(0); // useFetchItemsByUsers(refreshCount);
+  // use this in context and set it when a user registors.
 
-  if(!users) return <div>Loading users</div>;
+  const { users } = useFetchAllUsers();
+  const { allInventories } = useFetchItemsByUsers();
+
+
+  if(!users || !allInventories) return <div>Loading data</div>;
 
   return (
-    <InventoryContext.Provider value={{users}}>
+    <InventoryContext.Provider value={{users, allInventories}}>
 
       <Routes>
         <Route path='/' element={<Home/>} />
