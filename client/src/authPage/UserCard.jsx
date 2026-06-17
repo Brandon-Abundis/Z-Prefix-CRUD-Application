@@ -19,7 +19,7 @@ export default function UserCard() {
     return (
     <div className="user-card">
       <h2>Welcome, {user.username}</h2>
-      <p>Name: {user.first_name} {user.last_name}</p>
+      <p>id: {user.id}</p>
 
       <button onClick={() => navigate('/modify-inventory')}>
         Modify Your Inventory

@@ -10,7 +10,7 @@ export default function LoginCard() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
-  const { setUser } = useContext(InventoryContext);
+  const { setCurrentUser } = useContext(InventoryContext);
   const { error, loading, login } = useLogin();
 
   const navigate = useNavigate();
@@ -21,8 +21,8 @@ export default function LoginCard() {
     const loggedInUser = await login(username, password);
 
     if (loggedInUser) {
-      setUser(loggedInUser);   // store globally
-      navigate("/");           // redirect to Home
+      setCurrentUser(loggedInUser);   // store globally
+      navigate("/");                 // redirect to Home
     }
   }
 

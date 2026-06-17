@@ -3,6 +3,7 @@
 // import viteLogo from './assets/vite.svg'
 // import heroImg from './assets/hero.png'
 import './App.css'
+import { useState, useEffect } from 'react';
 import { Routes, Route } from "react-router-dom";
 
 import Home from './mainPage/Home';
@@ -13,7 +14,6 @@ import useFetchItemsByUsers from './customHooks/useFetchItemsByUsers';
 
 import NavBar from './mainPage/NavBar';
 import LoginPage from './authPage/LoginPage';
-import { useState } from 'react';
 import RegisterPage from './authPage/RegisterPage';
 
 function App() {
@@ -24,11 +24,30 @@ function App() {
   const { users } = useFetchAllUsers();
   const { allInventories } = useFetchItemsByUsers();
 
+  useEffect(() => {
+    async function restoreSession() { // need to put this in a seperate file.
+      try {
+        const res = await fetch('http://localhost:8080/auth/me', {
+          method: 'GET',
+          credentials: 'include'
+        });
+
+        if (res.ok) {
+          const currentUser = await res.json();
+          setUser(currentUser);
+        }
+      } catch (error) {
+        console.error('Session restore failed:', error);
+      }
+    }
+
+    restoreSession();
+  }, []);
 
   if(!users || !allInventories) return <div>Loading data</div>;
 
   return (
-    <InventoryContext.Provider value={{users, allInventories, user, setUser}}>
+    <InventoryContext.Provider value={{users, allInventories, user, setUser, setCurrentUser: setUser}}>
 
       <NavBar />
 

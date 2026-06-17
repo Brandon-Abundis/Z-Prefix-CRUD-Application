@@ -64,10 +64,25 @@ const userLogin= async (req, res) => {
 
     delete currentUser.password;
 
+    res.cookie('user', { id: currentUser.id, username: currentUser.username }, {
+      httpOnly: true,
+      maxAge: 1000 * 60 * 60 * 24,
+      secure: false,
+      sameSite: 'lax'
+    });
+
     res.status(200).send(currentUser);
   } catch(error) {
     res.status(500).send({ message: error.message });
   }
 }
 
-module.exports = { registerUser, userLogin };
+const getCurrentUser = (req, res) => { // this is what is needed to check the cookies...
+  const user = req.cookies?.user;
+  if (!user) {
+    return res.status(401).send({ message: 'Not authenticated.' });
+  }
+  res.status(200).send(user);
+}
+
+module.exports = { registerUser, userLogin, getCurrentUser };
