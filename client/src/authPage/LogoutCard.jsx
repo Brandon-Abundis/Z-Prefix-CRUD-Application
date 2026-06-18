@@ -20,6 +20,7 @@ export default function LogoutCard() {
 
     if(loggedOut) {
       setCurrentUser({});
+      window.location.reload(false);
       navigate("/")
     }
   }
