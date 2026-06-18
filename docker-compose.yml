@@ -19,3 +19,16 @@ services:
       - /app/node_modules
     environment:
       - DATABASE_URL=postgres://postgres:docker@db:5432/crud_db
+
+  ui:
+    build: ./client
+    ports:
+      - 5173:5173
+    volumes:
+      - ./client:/app
+      - /app/node_modules
+    environment:
+      - VITE_API_URL=http://localhost:8080
+    command: npm run dev
+    depends_on:
+      - api

@@ -1,5 +1,6 @@
 const express = require("express");
 const cors = require("cors");
+const cookieParser = require("cookie-parser");
 
 const app = express();
 const port = 8080;
@@ -9,6 +10,8 @@ const userRoutes = require("./routes/users");
 const itemRoutes = require("./routes/items");
 const authRoutes = require("./routes/auth");
 
+app.use(cors({ origin: "http://localhost:5173", credentials: true }));
+app.use(cookieParser());
 app.use(express.json());
 
 app.get("/", (req, res) => {
