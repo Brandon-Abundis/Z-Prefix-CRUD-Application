@@ -1,0 +1,32 @@
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 50;
+}
+.add-item-button {
+  margin-top: 0.5rem;
+  padding: 0.6rem 1rem;
+
+  background: #f49f1f;
+  color: black;
+  border: none;
+  border-radius: 6px;
+
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.add-item-button:hover {
+  background: #d88200;
+}
+/* .modal-content {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 1.5rem;
+  border-radius: 12px;
+  width: 350px;
+} */

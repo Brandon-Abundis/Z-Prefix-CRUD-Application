@@ -97,7 +97,7 @@ const createItem = async (req, res) => {
   const { user_id, item_name, description, quantity } = req.body;
 
   try {
-    if(!user_id && !item_name && !description && !quantity) {
+    if(!user_id || !item_name || !description || !quantity) {
       return res.status(400).send({ message: "missing data."});
     }
 
