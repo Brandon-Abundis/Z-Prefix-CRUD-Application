@@ -77,6 +77,21 @@ const userLogin= async (req, res) => {
   }
 }
 
+const userLogout = async (req, res) => {
+  try {
+    res.clearCookie("user", {
+      httpOnly: true,
+      secure: false,
+      sameSite: "lax"
+    });
+
+    res.status(200).send({ message: "Logged out successfully." });
+  } catch (error) {
+    res.status(500).send({ message: error.message });
+  }
+};
+
+
 const getCurrentUser = (req, res) => { // this is what is needed to check the cookies...
   const user = req.cookies?.user;
   if (!user) {
@@ -85,4 +100,4 @@ const getCurrentUser = (req, res) => { // this is what is needed to check the co
   res.status(200).send(user);
 }
 
-module.exports = { registerUser, userLogin, getCurrentUser };
+module.exports = { registerUser, userLogin, getCurrentUser, userLogout };

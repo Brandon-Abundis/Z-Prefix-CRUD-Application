@@ -1,0 +1,83 @@
+.login-prompt-top-right {
+  display: flex;
+  flex-direction: row;
+
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+
+  padding: 0.75rem 1rem;
+  border-radius: 10px;
+
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+
+  color: white;
+  font-size: 0.9rem;
+}
+
+.login-prompt-top-right button {
+  padding: 0.4rem 0.75rem;
+  border-radius: 6px;
+
+  background: #646cff;
+  border: none;
+  color: white;
+
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.login-prompt-top-right button:hover {
+  background: #747bff;
+}
+
+
+/* --------------------------------------------------------------- */
+.logout {
+  /* position: fixed; */
+  top: 1rem;
+  right: 1rem;
+
+  padding: 1rem;
+  border-radius: 10px;
+
+  /* background: rgba(255, 255, 255, 0.06); */
+  /* border: 1px solid rgba(255, 255, 255, 0.12); */
+
+  display: flex;
+  flex-direction: row;
+  align-items: end;
+  gap: 0.75rem;
+
+  color: white;
+  min-width: 200px;
+}
+
+.logout h2 {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.logout button {
+  padding: 0.5rem;
+  border-radius: 6px;
+  height: 1.75rem;
+
+  background: #ff6464;
+  border: none;
+  color: white;
+
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.logout button:hover {
+  background: #747bff;
+}
+

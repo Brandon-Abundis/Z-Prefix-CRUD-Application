@@ -21,8 +21,8 @@ export default function LoginCard() {
     const loggedInUser = await login(username, password);
 
     if (loggedInUser) {
-      setCurrentUser(loggedInUser);   // store globally
-      navigate("/");                 // redirect to Home
+      setCurrentUser(loggedInUser); // store globally until cookies
+      navigate("/");
     }
   }
 
