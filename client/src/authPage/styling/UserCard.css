@@ -1,0 +1,95 @@
+.user-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  padding: 0.5rem;
+  margin: 1.5rem auto;
+
+  width: fit-content;
+  max-width: 50vw;
+
+  background: rgba(255, 255, 255, 0.009);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 12px;
+
+  /* gap: 1rem; */
+}
+
+
+
+.user-card button {
+  margin-top: 1rem;
+  padding: 0.5rem;
+  border-radius: 6px;
+  width: fit-content;
+  font-weight: bold;
+
+  background: #f49f1f;
+  color: rgb(0, 0, 0);
+  border: none;
+
+  cursor: pointer;
+  transition: background 0.2s ease;
+  align-self: flex-end;
+}
+
+.user-card button:hover {
+  background: #d88200;
+}
+
+.user-card-inventory {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.6rem;
+  margin-top: 1rem;
+}
+
+
+.user-inventory-item {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+
+  padding: 0.35rem 0.85rem;
+
+  background: rgba(255, 255, 255, 0.10);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 999px;
+
+  width: max-content;
+  min-width: 150px;
+  max-width: 260px;
+
+  color: white;
+  font-size: 0.85rem;
+
+  cursor: pointer;
+  transition: background 0.15s ease, transform 0.15s ease;
+}
+
+.user-inventory-item:hover {
+  background: rgba(255, 255, 255, 0.20);
+  transform: translateY(-2px);
+}
+
+
+
+
+.user-inventory-item h4,
+.user-inventory-item p {
+  margin: 0;
+  white-space: nowrap;
+}
+
+
+
+
+
+
+
+
+
+

@@ -15,6 +15,7 @@ import useFetchItemsByUsers from './customHooks/useFetchItemsByUsers';
 import NavBar from './mainPage/NavBar';
 import LoginPage from './authPage/LoginPage';
 import RegisterPage from './authPage/RegisterPage';
+import UserInventoryPage from './userInventory/UserInventoryPage';
 
 function App() {
   // const [refreshCount, setRefreshCount] = useState(0); // useFetchItemsByUsers(refreshCount);
@@ -55,6 +56,7 @@ function App() {
         <Route path='/' element={<Home/>} />
         <Route path='/login' element={<LoginPage />} />
         <Route path='/register' element={<RegisterPage />} />
+        <Route path='/inventory' element={<UserInventoryPage />} />
       </Routes>
 
       <section id="spacer"></section>
