@@ -9,9 +9,10 @@ const createUser = async (user) => {
 
 const registerUser = async (req, res) => {
   const { first_name, last_name, username, password } = req.body;
+
   try {
     if (!first_name || !last_name || !username || !password) {
-      return res.status(400).send({ message: 'Bad Request. Requires all fields first_name, last_name, username, and password to be provided.' });
+      return res.status(400).send({ message: 'All fields required.' });
     }
 
     const exists = await db('users').where("username", username).first();
@@ -20,28 +21,24 @@ const registerUser = async (req, res) => {
     }
 
     const hashedPassword = await bcrypt.hash(password, SALT_ROUNDS);
+
     const newUser = await createUser({
-      first_name: first_name,
-      last_name: last_name,
-      username: username,
+      first_name,
+      last_name,
+      username,
       password: hashedPassword
     });
 
-    const userRecord = newUser[0];
-
-    // reference to the cookie-parser stuff online...
-    res.cookie('user', { id: userRecord.id, username: userRecord.username }, {
-      httpOnly: true,
-      maxAge: 1000 * 60 * 60 * 24,
-      secure: false,
-      sameSite: 'lax'
+    res.status(200).send({
+      message: "User successfully registered.",
+      user: newUser[0]
     });
 
-    res.status(200).send({ message: "User successfully registered.", user: userRecord });
   } catch (error) {
     res.status(500).send({ message: error.message });
   }
-}
+};
+
 
 
 const userLogin= async (req, res) => {
