@@ -3,7 +3,9 @@
   flex-direction: column;
   gap: 1.25rem;
 
-  background: rgba(255, 255, 255, 0.08);
+  /* background: rgba(255, 255, 255, 0.68); */
+    background: rgba(20, 20, 20, 0.8);
+  backdrop-filter: blur(4px);
   border: 1px solid rgba(255, 255, 255, 0.15);
   padding: 1.5rem;
   border-radius: 12px;
