@@ -13,12 +13,17 @@ export default function UserInventoryPage() {
 
   return (
     <div className="user-inventory">
-      <button className="back-button" onClick={() => navigate('/')}>Back</button>
+      <p>Please save changes</p>
 
-      <button
-        className="add-item-button" onClick={() => setShowAddItem(true)}>
-        Add item
-      </button>
+      <div className="buttons">
+        <button className="back-button" onClick={() => navigate('/')}>Back</button>
+
+        <button
+          className="add-item-button" onClick={() => setShowAddItem(true)}>
+          Add item
+        </button>
+
+      </div>
 
       {showAddItem && (
         <div className="modal-overlay">
