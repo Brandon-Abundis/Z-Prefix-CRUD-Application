@@ -15,6 +15,54 @@ docker compose up --build
 - The server will be available at: `http://localhost:8080` 🛢️
 - ✅ Generic login credentials: username: `user`, password: `123`.
 
+> **⚠️Mac Users' issues** unknown issue regarding Dockerfiles, work-around below, replace the docker code with these if build error occures!
+
+- for the `client` Dockerfile
+```Dockerfile
+#client
+FROM node:alpine
+
+WORKDIR /app
+
+COPY package*.json ./
+
+# Workaround for environments with TLS/CA interception during build
+RUN npm config set strict-ssl false \
+ && npm install
+
+COPY . .
+
+EXPOSE 5173
+
+CMD ["npm", "run", "dev"]
+```
+- for the `server` Dockerfile
+```Dockerfile
+#server
+FROM node:alpine
+
+# Adds basic shell tools often needed for migrations/scripts
+# Install CA certificates first so TLS verification succeeds, then install bash
+RUN sed -i 's/https:/http:/' /etc/apk/repositories \
+ && apk update \
+ && apk add --no-cache ca-certificates bash \
+ && update-ca-certificates
+
+WORKDIR /app
+
+COPY package*.json ./
+
+# Workaround for environments with TLS/CA interception during build
+RUN npm config set strict-ssl false \
+ && npm install
+
+COPY . .
+
+EXPOSE 8080
+
+CMD ["npm", "start"]
+```
+
 ## Server Endpoints 🖧
 
 The API is mounted under `/users`, `/items`, and `/auth`.
