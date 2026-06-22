@@ -1,9 +1,13 @@
 import './styling/InventoryCard.css'
 
-export default function InventoryCard({inventory}) {
+export default function InventoryCard({inventory, userId}) {
 
+  //userId === inventory.userInfo.id
   return(
-    <div className="inventory-card">
+    <div className={userId === inventory.userInfo.id
+        ? "inventory-card owner"
+        : "inventory-card"}>
+
       <h2>Manager: {inventory.userInfo?.username}</h2>
       <div className="inventory-card-all-items">
         { inventory.inventory?.map(item =>

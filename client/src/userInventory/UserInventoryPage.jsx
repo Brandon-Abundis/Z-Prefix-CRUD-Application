@@ -13,14 +13,14 @@ export default function UserInventoryPage() {
 
   return (
     <div className="user-inventory">
-      <p>Please save changes</p>
+      <p>Please save changes!</p>
 
       <div className="buttons">
-        <button className="back-button" onClick={() => navigate('/')}>Back</button>
+        <button className="back-button" onClick={() => navigate('/')}>🏠︎ Back</button>
 
         <button
           className="add-item-button" onClick={() => setShowAddItem(true)}>
-          Add item
+          Add item ✚
         </button>
 
       </div>

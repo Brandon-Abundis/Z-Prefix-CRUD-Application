@@ -1,3 +1,11 @@
+.buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+
+  padding-bottom: 2rem;
+}
+
 .modal-overlay {
   position: fixed;
   inset: 0;
@@ -13,7 +21,8 @@
 
   background: #f49f1f;
   color: black;
-  border: none;
+  border: 3px solid;
+  border-color: #804d01;
   border-radius: 6px;
 
   cursor: pointer;
@@ -30,3 +39,20 @@
   border-radius: 12px;
   width: 350px;
 } */
+
+.back-button {
+  margin-top: 0.5rem;
+  padding: 0.6rem 1rem;
+
+  background: #49505e;
+  /* color: black; */
+  border: none;
+  border-radius: 6px;
+
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.back-button:hover {
+  background: #5a616e;
+}
