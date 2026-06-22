@@ -1,0 +1,104 @@
+.add-item-card {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+
+  /* background: rgba(255, 255, 255, 0.68); */
+    background: rgba(20, 20, 20, 0.8);
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 1.5rem;
+  border-radius: 12px;
+
+  width: 360px;
+  position: relative;
+}
+/* ------------------ */
+.add-item-card {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 1.5rem;
+  border-radius: 12px;
+
+  width: 360px;
+  position: relative;
+}
+/* ---------------------------- */
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.75rem;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+/* --------------------------------------- */
+.close-button {
+  background: #ff4d4d;
+  border: none;
+  color: white;
+
+  font-size: 1.1rem;
+  font-weight: bold;
+  line-height: 1;
+
+  padding: 0.4rem 0.7rem;
+  border-radius: 8px;
+
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.15s ease;
+}
+
+.close-button:hover {
+  background: #d93636;
+  transform: scale(1.05);
+}
+/* ---------------------------------------- */
+.add-item-card input,
+.add-item-card textarea {
+  width: 100%;
+  padding: 0.6rem;
+
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 6px;
+
+  color: white;
+  font-size: 0.95rem;
+}
+
+.add-item-card textarea {
+  resize: vertical;
+  min-height: 70px;
+}
+/*  */
+.add-item-card button[type="submit"] {
+  margin-top: 0.5rem;
+  padding: 0.6rem 1rem;
+
+  background: #f49f1f;
+  color: black;
+  border: none;
+  border-radius: 6px;
+
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.add-item-card button[type="submit"]:hover {
+  background: #d88200;
+}
+
+.inputs {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 7px;
+}

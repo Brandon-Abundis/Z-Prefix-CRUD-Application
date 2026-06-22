@@ -11,16 +11,16 @@ exports.seed = async function(knex) {
 
   await knex('users').insert([
     {
-      first_name: 'admin',
-      last_name: '',
-      username: 'inventory_manager',
-      password: await bcrypt.hash("password", SALT_ROUNDS)
+      first_name: 'Inventory',
+      last_name: 'Manager',
+      username: 'user',
+      password: await bcrypt.hash("123", SALT_ROUNDS)
     },
     {
       first_name: 'Brandon',
       last_name: 'Abundis',
       username: 'some-user',
-      password: await bcrypt.hash("123", SALT_ROUNDS)
+      password: await bcrypt.hash("password", SALT_ROUNDS)
     },
     {
       first_name: 'John',
