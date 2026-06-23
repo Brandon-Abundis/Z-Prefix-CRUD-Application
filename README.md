@@ -8,7 +8,7 @@ From the project root:
 
 
 ```bash
-docker compose up --build
+docker compose up
 ```
 
 - The client will be available at: `http://localhost:5173` 💻
@@ -95,3 +95,10 @@ The API is mounted under `/users`, `/items`, and `/auth`.
 - CORS is configured for the client origin `http://localhost:5173`.
 - If the docker compose is breaking do a `docker compose down -v`.
 - `Auth` and `Cookies` took me 4 days to figure out ♡(˶>⩊<˶)...
+
+## Pics of how its supposed to look like...
+| | | |
+|---|---|---|
+| ![Home (no user)](./client/public/front-end%20pictures/1.%20home-no-user.png) | ![Login](./client/public/front-end%20pictures/2.%20login.png) | ![Register](./client/public/front-end%20pictures/3.%20register.png) |
+| ![Home (user logged in)](./client/public/front-end%20pictures/4.%20home-user.png) | ![Inventory](./client/public/front-end%20pictures/5.%20inventory.png) | ![Add Item](./client/public/front-end%20pictures/6.%20add-item.png) |
+| ![Delete Item](./client/public/front-end%20pictures/7.%20delete-item.png) | | |
